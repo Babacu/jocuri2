@@ -1,89 +1,75 @@
 import random
+def rezultate(a, b, c):
+    print("Calculatorul a ales", a)
+    print(" ")
+    print("Scorul este: ", b, "-", c)
 print("Piatra, hartie, foarfece")
 print("Doriti sa jucati?")
-dorinta = input()
-bucla2 = 1
-if dorinta == "da" or dorinta == "Da":
-    while bucla2 == 1:
-        scorul_jucatorului = 0
-        scorul_calculatorului = 0
-        bucla = 1
-        while bucla == 1:
-            variantele_calculatorului = ["Piatra", "Hartie", "Foarfeca"]
-            alegerea_calculatorului = random.choice(variantele_calculatorului)
+wish = input()
+loop = 1
+if wish == "da" or wish == "Da":
+    while loop == 1:
+        player_score = 0
+        PC_score = 0
+        loop2 = 1
+        while loop2 == 1:
+            PC_variants = ["Piatra", "Hartie", "Foarfeca"]
+            PC_choice = random.choice(PC_variants)
             print(" ")
             print("Alege o varianta: piatra/hartie/foarfeca")
-            varianta = input()
-            if varianta == "piatra" or varianta == "Piatra":
-                if alegerea_calculatorului == "Piatra":
-                    print("Calculatorul a ales tot", alegerea_calculatorului)
-                    print(" ")
-                    print("Scorul este: ", scorul_jucatorului, "-", scorul_calculatorului)
-                elif alegerea_calculatorului == "Hartie":
-                    scorul_calculatorului = scorul_calculatorului + 1
-                    print("Calculatorul a ales", alegerea_calculatorului)
-                    print(" ")
-                    print("Scorul este: ", scorul_jucatorului, "-", scorul_calculatorului)
-                    if scorul_calculatorului == 3:
-                        print("Ai pierdut, incearca din nou!")
-                        bucla = 0
-                elif alegerea_calculatorului == "Foarfeca":
-                    scorul_jucatorului = scorul_jucatorului + 1
-                    print("Calculatorul a ales", alegerea_calculatorului)
-                    print(" ")
-                    print("Scorul este: ", scorul_jucatorului, "-", scorul_calculatorului)
-                    if scorul_jucatorului == 3:
-                        print("Felicitari, ai castigat")
-                        bucla = 0
-            if varianta == "hartie" or varianta == "Hartie":
-                if alegerea_calculatorului == "Hartie":
-                    print("Calculatorul a ales tot", alegerea_calculatorului)
-                    print(" ")
-                    print("Scorul este: ", scorul_jucatorului, "-", scorul_calculatorului)
-                elif alegerea_calculatorului == "Foarfeca":
-                    scorul_calculatorului = scorul_calculatorului + 1
-                    print("Calculatorul a ales", alegerea_calculatorului)
-                    print(" ")
-                    print("Scorul este: ", scorul_jucatorului, "-", scorul_calculatorului)
-                    if scorul_calculatorului == 3:
-                        print("Ai pierdut, incearca din nou!")
-                        bucla = 0
-                elif alegerea_calculatorului == "Piatra":
-                    scorul_jucatorului = scorul_jucatorului + 1
-                    print("Calculatorul a ales", alegerea_calculatorului)
-                    print(" ")
-                    print("Scorul este: ", scorul_jucatorului, "-", scorul_calculatorului)
-                    if scorul_jucatorului == 3:
-                        print("Felicitari, ai castigat")
-                        bucla = 0
-            if varianta == "Foarfeca" or varianta == "foarfeca":
-                if alegerea_calculatorului == "Foarfeca":
-                    print("Calculatorul a ales tot", alegerea_calculatorului)
-                    print(" ")
-                    print("Scorul este: ", scorul_jucatorului, "-", scorul_calculatorului)
-                elif alegerea_calculatorului == "Piatra":
-                    scorul_calculatorului = scorul_calculatorului + 1
-                    print("Calculatorul a ales", alegerea_calculatorului)
-                    print(" ")
-                    print("Scorul este: ", scorul_jucatorului, "-", scorul_calculatorului)
-                    if scorul_calculatorului == 3:
-                        print("Ai pierdut, incearca din nou!")
-                        bucla = 0
-                elif alegerea_calculatorului == "Hartie":
-                    scorul_jucatorului = scorul_jucatorului + 1
-                    print("Calculatorul a ales", alegerea_calculatorului)
-                    print(" ")
-                    print("Scorul este: ", scorul_jucatorului, "-", scorul_calculatorului)
-                    if scorul_jucatorului == 3:
-                        print("Felicitari, ai castigat")
-                        bucla = 0
+            option = input()
+            if option == PC_variants[0]:
+                if PC_choice == PC_variants[0]:
+                    rezultate(PC_choice, player_score, PC_score)
+                elif PC_choice == PC_variants[1]:
+                    PC_score = PC_score + 1
+                    rezultate(PC_choice, player_score, PC_score)
+                elif PC_choice == PC_variants[2]:
+                    player_score = player_score + 1
+                    rezultate(PC_choice, player_score, PC_score)
+                if PC_score == 3:
+                    print("Ai pierdut, incearca din nou!")
+                    loop2 = 0
+                elif player_score == 3:
+                    print("Felicitari, ai castigat")
+                    loop2 = 0
+            if option == PC_variants[1]:
+                if PC_choice == PC_variants[1]:
+                    rezultate(PC_choice, player_score, PC_score)
+                elif PC_choice == PC_variants[2]:
+                    PC_score = PC_score + 1
+                    rezultate(PC_choice, player_score, PC_score)
+                elif PC_choice == PC_variants[0]:
+                    player_score = player_score + 1
+                    rezultate(PC_choice, player_score, PC_score)
+                if PC_score == 3:
+                    print("Ai pierdut, incearca din nou!")
+                    loop2 = 0
+                elif player_score == 3:
+                    print("Felicitari, ai castigat")
+                    loop2 = 0
+            if option == PC_variants[2]:
+                if PC_choice == PC_variants[2]:
+                    rezultate(PC_choice, player_score, PC_score)
+                elif PC_choice == PC_variants[0]:
+                    PC_score = PC_score + 1
+                    rezultate(PC_choice, player_score, PC_score)
+                elif PC_choice == PC_variants[1]:
+                    player_score = player_score + 1
+                    rezultate(PC_choice, player_score, PC_score)
+                if PC_score == 3:
+                    print("Ai pierdut, incearca din nou!")
+                    loop2 = 0
+                elif player_score == 3:
+                    print("Felicitari, ai castigat")
+                    loop2 = 0
         print("Doriti sa mai jucati?")
-        dorinta2 = input()
-        if dorinta2 == "da" or dorinta2 == "Da":
+        wish2 = input()
+        if wish2 == "da" or wish2 == "Da":
             continue
         else:
             print("Va multumim ca ati ales sa va jucati!")
-            bucla2 = 0
+            loop = 0
 else:
     print("ok")
     print("Va multumim!")
