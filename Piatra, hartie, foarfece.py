@@ -1,66 +1,66 @@
 import random
-def rezultate(a, b, c):
-    print("Calculatorul a ales", a)
+def results(oneOfPCOptions, playersResult, PCsResult):
+    print("Calculatorul a ales", oneOfPCOptions)
     print(" ")
-    print("Scorul este: ", b, "-", c)
+    print("Scorul este: ", playersResult, "-", PCsResult)
 print("Piatra, hartie, foarfece")
 print("Doriti sa jucati?")
 wish = input()
 loop = 1
 if wish == "da" or wish == "Da":
     while loop == 1:
-        player_score = 0
-        PC_score = 0
+        playersScore = 0
+        PCsScore = 0
         loop2 = 1
         while loop2 == 1:
-            PC_variants = ["Piatra", "Hartie", "Foarfeca"]
-            PC_choice = random.choice(PC_variants)
+            PCOptions = ["Piatra", "Hartie", "Foarfeca"]
+            PCsChoice = random.choice(PCOptions)
             print(" ")
             print("Alege o varianta: piatra/hartie/foarfeca")
             option = input()
-            if option == PC_variants[0]:
-                if PC_choice == PC_variants[0]:
-                    rezultate(PC_choice, player_score, PC_score)
-                elif PC_choice == PC_variants[1]:
-                    PC_score = PC_score + 1
-                    rezultate(PC_choice, player_score, PC_score)
-                elif PC_choice == PC_variants[2]:
-                    player_score = player_score + 1
-                    rezultate(PC_choice, player_score, PC_score)
-                if PC_score == 3:
+            if option == PCOptions[0]:
+                if PCsChoice == PCOptions[0]:
+                    results(PCsChoice, playersScore, PCsScore)
+                elif PCsChoice == PCOptions[1]:
+                    PCsScore = PCsScore + 1
+                    results(PCsChoice, playersScore, PCsScore)
+                elif PCsChoice == PCOptions[2]:
+                    playersScore = playersScore + 1
+                    results(PCsChoice, playersScore, PCsScore)
+                if PCsScore == 3:
                     print("Ai pierdut, incearca din nou!")
                     loop2 = 0
-                elif player_score == 3:
+                elif playersScore == 3:
                     print("Felicitari, ai castigat")
                     loop2 = 0
-            if option == PC_variants[1]:
-                if PC_choice == PC_variants[1]:
-                    rezultate(PC_choice, player_score, PC_score)
-                elif PC_choice == PC_variants[2]:
-                    PC_score = PC_score + 1
-                    rezultate(PC_choice, player_score, PC_score)
-                elif PC_choice == PC_variants[0]:
-                    player_score = player_score + 1
-                    rezultate(PC_choice, player_score, PC_score)
-                if PC_score == 3:
+            if option == PCOptions[1]:
+                if PCsChoice == PCOptions[1]:
+                    results(PCsChoice, playersScore, PCsScore)
+                elif PCsChoice == PCOptions[2]:
+                    PCsScore = PCsScore + 1
+                    results(PCsChoice, playersScore, PCsScore)
+                elif PCsChoice == PCOptions[0]:
+                    playersScore = playersScore + 1
+                    results(PCsChoice, playersScore, PCsScore)
+                if PCsScore == 3:
                     print("Ai pierdut, incearca din nou!")
                     loop2 = 0
-                elif player_score == 3:
+                elif playersScore == 3:
                     print("Felicitari, ai castigat")
                     loop2 = 0
-            if option == PC_variants[2]:
-                if PC_choice == PC_variants[2]:
-                    rezultate(PC_choice, player_score, PC_score)
-                elif PC_choice == PC_variants[0]:
-                    PC_score = PC_score + 1
-                    rezultate(PC_choice, player_score, PC_score)
-                elif PC_choice == PC_variants[1]:
-                    player_score = player_score + 1
-                    rezultate(PC_choice, player_score, PC_score)
-                if PC_score == 3:
+            if option == PCOptions[2]:
+                if PCsChoice == PCOptions[2]:
+                    results(PCsChoice, playersScore, PCsScore)
+                elif PCsChoice == PCOptions[0]:
+                    PCsScore = PCsScore + 1
+                    results(PCsChoice, playersScore, PCsScore)
+                elif PCsChoice == PCOptions[1]:
+                    playersScore = playersScore + 1
+                    results(PCsChoice, playersScore, PCsScore)
+                if PCsScore == 3:
                     print("Ai pierdut, incearca din nou!")
                     loop2 = 0
-                elif player_score == 3:
+                elif playersScore == 3:
                     print("Felicitari, ai castigat")
                     loop2 = 0
         print("Doriti sa mai jucati?")

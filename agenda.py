@@ -1,41 +1,40 @@
-def nume_persoane(x):
-    return  x
-def nume_persoana(y):
-    return y
+def personsName(name):
+    return  name
 
-bucla = 1
-bucla2 = 1
+loop = 1
 print("Buna ziua")
-salut = input(" ")
+sayHello = input()
+#You are welcome to the computer directory
 print("Bine ati venit in agenda telefonica calculatorului")
-agenda_telefonica = {"Sebi" : 770421464, "Balau" : 748113188, "Bianca" : 768152514,
+phoneContacts = {"Sebi" : 770421464, "Balau" : 748113188, "Bianca" : 768152514,
                      "Crisan" : 724248152}
 print("Doriti sa accesati contactele noastre")
-dorinta = input(" ")
-if dorinta == "da":
-    print("Contactele noastre sunt: ", agenda_telefonica.keys())
+#want to get in the directory
+GetInTheDirectory = input()
+if GetInTheDirectory == "da":
+    print("Contactele noastre sunt: ", phoneContacts.keys())
     print("Pe cine doriti sa cautati in agenda?")
-    nume = input(" ")
-    if nume_persoane(nume) in agenda_telefonica:
-        print("Numarul sau este", agenda_telefonica[nume_persoane(nume)])
-        while bucla == 1:
+    #Insert the person's name you want to seach
+    name = input()
+    if personsName(name) in phoneContacts:
+        print("Numarul sau este", phoneContacts[personsName(name)])
+        while loop == 1:
             print("Vreti sa adaugati contacte noi in agenda? ")
-            dorinta2 = input(" ")
-            if dorinta2 == "da":
+            # Add new people in the directory
+            add = input()
+            if add == "da":
                 print("Scrieti numele si numarul persoanei pe care vreti sa o adaugati: ")
-                nume2 = input(" ")
-                numar = int(input())
-                agenda_telefonica[nume_persoana(nume2)] = numar
-                print("Ati adaugat cu succes pe", nume_persoana(nume2), "in contactele noastre")
-                print("Agenda ta telefonica arata acum asa", agenda_telefonica.keys())
+                nameOfTheNewPerson = input()
+                phoneNumber = int(input())
+                phoneContacts[personsName(nameOfThePerson)] = phoneNumber
+                print("Ati adaugat cu succes pe", personsName(nameOfTheNewPerson), "in contactele noastre")
+                print("Agenda ta telefonica arata acum asa", phoneContacts.keys())
             else:
                print("ok")
-               bucla = 0
+               loop = 0
     else:
-       print("Ne pare rau, dar ", nume_persoane(nume), "nu a fost gasita in contactele noastre")
+       print("Ne pare rau, dar ", personsName(name), "nu a fost gasita in contactele noastre")
        print("Incercati din nou")
-elif dorinta == "nu":
+elif GetInTheDirectory == "nu":
     print("ok")
 print("Va multumim ca ati folosit agenda calculatorului")
-
-
