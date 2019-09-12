@@ -24,13 +24,14 @@ secondPlayersName = input()
 # I have to create a loop to repeat the movements of the players
 loop = 1
 loop2 = 1
+loop3 = 1
+loop4 = 1
 #The computer will ask you if you want to play
 print("Do you want to play?")
 #Answer the question
 answer = input()
-loop5 = 1
 if answer == "Yes" or "yes":
-    while loop5 == 1:
+    while loop == 1:
         #The deck has to be shuffled
         random.shuffle(deckOfCards)
         #Now the first player will extract two cards from the shuffled deck, check them and sum their values
@@ -75,27 +76,26 @@ if answer == "Yes" or "yes":
                 else:
                     #He doesn't want any card
                     print("it's suficient for", firstPlayersName)
-                    loop5 = 0
+                    loop = 0
                     break
                     #the player wins when he has more than the other player or when he has 21
             elif sumOfFirstPlayersCards == 21:
                 print(firstPlayersName, "won!")
                 #If the player won, the game is over and the second player doesn't play
-                loop = 0
                 loop2 = 0
-                loop5 = 0
+                loop3 = 0
+                loop = 0
                 break
             #and he loses when he has fewer than the other player or more than 21
             elif sumOfFirstPlayersCards > 21:
                 print(firstPlayersName, "lost!")
                 #If the player has more than 21, the other player doesn't have to play anymore
-                loop = 0
                 loop2 = 0
-                loop5 = 0
+                loop3 = 0
+                loop = 0
                 break
     #now, we will do the same but with the second player
-    while loop2 == 1:
-        loop4 = 1
+    while loop3 == 1:
         print("There is ", secondPlayersName, "'s hand")
         time.sleep(1)
         secondPlayersHand = deckOfCards[0:2]
@@ -127,21 +127,22 @@ if answer == "Yes" or "yes":
                     print("Their sum is: ", sumOfSecondPlayersCards)
                 else:
                     print("it's suficient for", secondPlayersName)
-                    loop2 = 0
+                    loop3 = 0
                     break
             elif sumOfSecondPlayersCards == 21:
                 print(secondPlayersName, "won!")
-                loop2 = 0
+                loop3 = 0
                 break
             elif sumOfSecondPlayersCards > 21:
                 print(secondPlayersName, "lost!")
-                loop2 = 0
+                loop3 = 0
                 break
+    #If nobody had 21, will win the player who has the nearest hand to 21
     if sumOfFirstPlayersCards > sumOfSecondPlayersCards and sumOfFirstPlayersCards <= 21:
         print(firstPlayersName,"won!")
     elif sumOfFirstPlayersCards < sumOfSecondPlayersCards and sumOfSecondPlayersCards <= 21:
         print(secondPlayersName,"won!")
+    #if they have the same hand, it's draw
     elif sumOfFirstPlayersCards == sumOfSecondPlayersCards:
         print("It's draw")
 print("Thank you!")
-#I have to declare functions
